@@ -2,17 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shape : MonoBehaviour
+public abstract class Shape : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnMouseDown()
     {
-        
+        Move(); //abstraction
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public abstract void Move(); //polymorphism
 }
