@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Shape : MonoBehaviour
 {
+    [SerializeField]
+    Color colorToSet;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        SetColor();     
     }
 
-    // Update is called once per frame
-    void Update()
+    void SetColor()
     {
-        
+        GetComponent<SpriteRenderer>().color = colorToSet;
     }
 }
