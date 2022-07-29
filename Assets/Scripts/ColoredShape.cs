@@ -2,19 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColoredShape : Shape
+public class ColoredShape : Shape //inheritance
 {
     [SerializeField]
-    Color colorToSet;
+    Color m_colorToSet;
+    public Color ColorToSet
+    {
+        get { return m_colorToSet; } //encapsulation with backing field
+    }
 
-    // Start is called before the first frame update
     void Start()
     {
-        SetColor();
+        SetColor(); //abstraction
     }
 
     void SetColor()
     {
-        GetComponent<SpriteRenderer>().color = colorToSet;
+        GetComponent<SpriteRenderer>().color = ColorToSet;
+    }
+
+    public override void Move() //polymorphism
+    {
+        transform.Translate(Vector3.up);
     }
 }

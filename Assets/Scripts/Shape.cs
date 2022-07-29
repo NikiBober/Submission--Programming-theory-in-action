@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shape : MonoBehaviour
+public abstract class Shape : MonoBehaviour
 {
+    private void OnMouseDown()
+    {
+        Move(); //abstraction
+    }
+
+    public abstract void Move(); //polymorphism
 }
